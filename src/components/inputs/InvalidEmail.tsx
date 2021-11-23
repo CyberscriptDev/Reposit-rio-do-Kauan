@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { Input, UnvalidEmailIcon, UnvalidField } from './Inputs.elements';
+import { Input, InvalidEmailIcon, InvalidField } from './Inputs.elements';
 
-function ValidEmail() {
+function InvalidEmail() {
   const [text, setText] = useState('');
 
   return (
-    <UnvalidField>
-      <UnvalidEmailIcon />
+    <InvalidField>
+      <InvalidEmailIcon />
       <Input 
         placeholder="E-mail" 
         type="email" value={text} 
         onChange={e => setText(e.target.value)}/>
-    </UnvalidField>
+    </InvalidField>
   );
 }
 
-export default ValidEmail;
+export default InvalidEmail;

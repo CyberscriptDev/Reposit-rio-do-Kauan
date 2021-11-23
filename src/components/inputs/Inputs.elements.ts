@@ -46,7 +46,7 @@ export const VisiblePasswordIcon = styled(AiFillEye)`
   cursor: pointer;
 `;
 
-export const UnvisiblePasswordIcon = styled(AiFillEyeInvisible)`
+export const InvisiblePasswordIcon = styled(AiFillEyeInvisible)`
   color: #707174;
   margin-left: 0.5rem;
   cursor: pointer;
@@ -61,7 +61,7 @@ export const ValidField = styled.label`
   border: 0.1rem solid #06d6a0;
 `;
 
-export const UnvalidField = styled.label`
+export const InvalidField = styled.label`
   padding: 0.8rem;
   margin: 0px;
   width: 20rem;
@@ -75,7 +75,7 @@ export const ValidEmailIcon = styled(AiOutlineMail)`
   margin-right: 0.5rem;
 `;
 
-export const UnvalidEmailIcon = styled(AiOutlineMail)`
+export const InvalidEmailIcon = styled(AiOutlineMail)`
   color: #e62965;
   margin-right: 0.5rem;
 `;
@@ -85,7 +85,7 @@ export const ValidPasswordIcon = styled(RiLockPasswordLine)`
   margin-right: 0.5rem;
 `;
 
-export const UnvalidPasswordIcon = styled(RiLockPasswordLine)`
+export const InvalidPasswordIcon = styled(RiLockPasswordLine)`
   color: #e62965;
   margin-right: 0.5rem;
 `;
@@ -96,19 +96,19 @@ export const ValidVisiblePasswordIcon = styled(AiFillEye)`
   cursor: pointer;
 `;
 
-export const UnvalidVisiblePasswordIcon = styled(AiFillEye)`
+export const InvalidVisiblePasswordIcon = styled(AiFillEye)`
   color: #e62965;
   margin-left: 0.5rem;
   cursor: pointer;
 `;
 
-export const ValidUnvisiblePasswordIcon = styled(AiFillEyeInvisible)`
+export const ValidInvisiblePasswordIcon = styled(AiFillEyeInvisible)`
   color: #06d6a0;
   margin-left: 0.5rem;
   cursor: pointer;
 `;
 
-export const UnvalidUnvisiblePasswordIcon = styled(AiFillEyeInvisible)`
+export const InvalidInvisiblePasswordIcon = styled(AiFillEyeInvisible)`
   color: #e62965;
   margin-left: 0.5rem;
   cursor: pointer;

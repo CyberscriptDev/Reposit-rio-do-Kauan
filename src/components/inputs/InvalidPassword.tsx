@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import {
-  Input, UnvalidField,
-  UnvalidPasswordIcon, UnvalidUnvisiblePasswordIcon, UnvalidVisiblePasswordIcon
+  Input, InvalidField,
+  InvalidInvisiblePasswordIcon, InvalidPasswordIcon, InvalidVisiblePasswordIcon
 } from './Inputs.elements';
 
-function ValidPassword() {
+function InvalidPassword() {
   const [text, setText] = useState('');
   const [visible, setVisible] = useState(false);
 
   const handleClick = () => setVisible(!visible);
 
   return (
-    <UnvalidField>
-      <UnvalidPasswordIcon/>
+    <InvalidField>
+      <InvalidPasswordIcon/>
       <Input 
         placeholder="Senha"
         type={visible ? 'text' : 'password'} 
         value={text} onChange={e => setText(e.target.value)}/>
       {visible ? 
-        <UnvalidUnvisiblePasswordIcon onClick={handleClick}/>
+        <InvalidInvisiblePasswordIcon onClick={handleClick}/>
         : 
-        <UnvalidVisiblePasswordIcon onClick={handleClick} />
+        <InvalidVisiblePasswordIcon onClick={handleClick} />
       }
-    </UnvalidField>
+    </InvalidField>
   );
 }
 
-export default ValidPassword;
+export default InvalidPassword;

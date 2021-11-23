@@ -1,5 +1,5 @@
 import React from 'react';
-import { SwitchBlock, SwitchOption } from './Switch.elements';
+import { SwitchThinBlock, SwitchThinOption } from './Switch.elements';
 import SwitchThin from './SwitchThin';
 
 interface Props {
@@ -10,10 +10,10 @@ interface Props {
 
 function SwitchThinWithOption({ color, option, id }: Props) {
   return (
-    <SwitchBlock>
+    <SwitchThinBlock>
       <SwitchThin id={id} color={color}/>
-      <SwitchOption>{option}</SwitchOption>
-    </SwitchBlock>
+      <SwitchThinOption>{option}</SwitchThinOption>
+    </SwitchThinBlock>
   );
 }
 
