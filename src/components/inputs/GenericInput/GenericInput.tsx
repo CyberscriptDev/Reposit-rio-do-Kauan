@@ -3,7 +3,7 @@ import { Field, Input } from './GenericInput.style';
 
 interface Props {
   type: string,
-  placeholder: string,
+  placeholder?: string,
 }
 
 function GenericInput({ type, placeholder }: Props) {

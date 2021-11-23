@@ -1,6 +1,6 @@
 import React from 'react';
 import Switch from '../Switch/Switch';
-import { SwitchBlock, SwitchOption } from '../Switch.elements';
+import { SwitchBlock, Option } from './OptionSwitch.style';
 
 interface Props {
   color?: string,
@@ -8,13 +8,13 @@ interface Props {
   id: string
 }
 
-function SwitchWithOption({ color, option, id }: Props) {
+function OptionSwitch({ color, option, id }: Props) {
   return (
     <SwitchBlock>
       <Switch id={id} color={color}/>
-      <SwitchOption>{option}</SwitchOption>
+      <Option>{option}</Option>
     </SwitchBlock>
   );
 }
 
-export default SwitchWithOption;
+export default OptionSwitch;

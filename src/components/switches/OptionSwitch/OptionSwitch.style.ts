@@ -8,7 +8,7 @@ export const SwitchBlock = styled.div`
   height: 42px;
 `;
 
-export const SwitchOption = styled.span`
+export const Option = styled.span`
   position: relative;
   top: 8px;
   right: 7px;

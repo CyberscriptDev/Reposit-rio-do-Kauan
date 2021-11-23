@@ -8,7 +8,7 @@ export const SwitchThinBlock = styled.div`
   height: 42px;
 `;
 
-export const SwitchThinOption = styled.span`
+export const ThinOption = styled.span`
   position: relative;
   top: 8px;
   right: 7px;

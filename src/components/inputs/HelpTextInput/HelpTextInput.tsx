@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Field, HelpField, Input } from './InputWithHelpText.style';
+import { Field, HelpField, Input } from './HelpTextInput.style';
 
 interface Props {
   type: string,
-  placeholder: string,
+  placeholder?: string,
   helpText: string
 }
 
-function InputWithHelpText({ type, placeholder, helpText }: Props) {
+function HelpTextInput({ type, placeholder, helpText }: Props) {
   const [text, useText] = useState('');
 
   return (
@@ -24,4 +24,4 @@ function InputWithHelpText({ type, placeholder, helpText }: Props) {
   );
 }
 
-export default InputWithHelpText;
+export default HelpTextInput;

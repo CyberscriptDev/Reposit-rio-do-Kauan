@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   CollapseChevronUpIcon, CollapseChevronDownIcon, CollapseContent, CollapseField,
   CollapseHeader
-} from './Collapses.elements';
+} from './CollapseChevron.style';
 
 interface Props {
   title: string,

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Field, Input, LoadingIcon } from './GenericInputWithLoading.style';
+import { Field, Input, LoadingIcon } from './GenericLoadingInput.style';
 
 interface Props {
   type: string,
-  placeholder: string,
+  placeholder?: string,
 }
 
-function GenericInputWithLoading({ type, placeholder }: Props) {
+function GenericLoadingInput({ type, placeholder }: Props) {
   const [text, useText] = useState('');
 
   return (
@@ -16,9 +16,9 @@ function GenericInputWithLoading({ type, placeholder }: Props) {
         onChange={(e) => useText(e.target.value)} 
         type={type} 
         placeholder={placeholder}/>
-      <LoadingIcon className="spinner" />
+      <LoadingIcon />
     </Field>
   );
 }
 
-export default GenericInputWithLoading;
+export default GenericLoadingInput;
