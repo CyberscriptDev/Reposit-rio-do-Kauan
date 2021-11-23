@@ -1,8 +1,8 @@
 import React from "react";
-import Switch from "./switchs/Switch";
-import SwitchThin from "./switchs/SwitchThin";
-import SwitchThinWithOption from "./switchs/SwitchThinWithOption";
-import SwitchWithOption from "./switchs/SwitchWithOption";
+import Switch from "./switchs/Switch/Switch";
+import SwitchThin from "./switchs/SwitchThin/SwitchThin";
+import SwitchThinWithOption from "./switchs/SwitchThinWithOption/SwitchThinWithOption";
+import SwitchWithOption from "./switchs/SwitchWithOption/SwitchWithOption";
 
 export function Home() {
 

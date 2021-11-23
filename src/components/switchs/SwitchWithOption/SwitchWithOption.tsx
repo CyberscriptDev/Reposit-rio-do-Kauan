@@ -1,6 +1,6 @@
 import React from 'react';
-import Switch from './Switch';
-import { SwitchBlock, SwitchOption } from './Switch.elements';
+import Switch from '../Switch/Switch';
+import { SwitchBlock, SwitchOption } from '../Switch.elements';
 
 interface Props {
   color?: string,

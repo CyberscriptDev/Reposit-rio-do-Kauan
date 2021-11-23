@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SwitchField, SwitchThinButton, SwitchThinControl, SwitchThinInput } from './Switch.elements';
+import { SwitchField, SwitchThinButton, SwitchThinControl, SwitchThinInput } from './SwitchThin.style';
 
 interface Props {
   color?: string,

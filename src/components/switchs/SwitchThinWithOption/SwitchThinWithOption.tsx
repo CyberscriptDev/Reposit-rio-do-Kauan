@@ -1,6 +1,6 @@
 import React from 'react';
-import { SwitchThinBlock, SwitchThinOption } from './Switch.elements';
-import SwitchThin from './SwitchThin';
+import { SwitchThinBlock, SwitchThinOption } from '../Switch.elements';
+import SwitchThin from '../SwitchThin/SwitchThin';
 
 interface Props {
   color?: string,
