@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Field, Input } from './Inputs.elements';
+import { Field, Input, LoadingIcon } from '../Inputs.elements';
 
 interface Props {
   type: string,
   placeholder: string,
 }
 
-function GenericInputDisabled({ type, placeholder }: Props) {
+function GenericInputWithLoading({ type, placeholder }: Props) {
   const [text, useText] = useState('');
 
   return (
@@ -14,11 +14,11 @@ function GenericInputDisabled({ type, placeholder }: Props) {
       <Input 
         value={text} 
         onChange={(e) => useText(e.target.value)} 
-        disabled
         type={type} 
         placeholder={placeholder}/>
+      <LoadingIcon className="spinner" />
     </Field>
   );
 }
 
-export default GenericInputDisabled;
+export default GenericInputWithLoading;

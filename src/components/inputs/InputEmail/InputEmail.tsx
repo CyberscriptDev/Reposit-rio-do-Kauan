@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EmailIcon, Field, Input } from './Inputs.elements';
+import { EmailIcon, Field, Input } from '../Inputs.elements';
 
 
 function InputEmail() {

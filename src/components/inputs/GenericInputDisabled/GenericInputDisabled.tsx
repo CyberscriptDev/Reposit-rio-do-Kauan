@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Field, Input } from './Inputs.elements';
+import { Field, Input } from '../Inputs.elements';
 
 interface Props {
   type: string,
   placeholder: string,
 }
 
-function GenericInput({ type, placeholder }: Props) {
+function GenericInputDisabled({ type, placeholder }: Props) {
   const [text, useText] = useState('');
 
   return (
@@ -14,10 +14,11 @@ function GenericInput({ type, placeholder }: Props) {
       <Input 
         value={text} 
         onChange={(e) => useText(e.target.value)} 
+        disabled
         type={type} 
         placeholder={placeholder}/>
     </Field>
   );
 }
 
-export default GenericInput;
+export default GenericInputDisabled;

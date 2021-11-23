@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, ValidEmailIcon, ValidField } from './Inputs.elements';
+import { Input, ValidEmailIcon, ValidField } from '../Inputs.elements';
 
 function ValidEmail() {
   const [text, setText] = useState('');

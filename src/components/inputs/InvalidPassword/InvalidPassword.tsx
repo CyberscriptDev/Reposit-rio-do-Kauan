@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Input, InvalidField,
   InvalidInvisiblePasswordIcon, InvalidPasswordIcon, InvalidVisiblePasswordIcon
-} from './Inputs.elements';
+} from '../Inputs.elements';
 
 function InvalidPassword() {
   const [text, setText] = useState('');

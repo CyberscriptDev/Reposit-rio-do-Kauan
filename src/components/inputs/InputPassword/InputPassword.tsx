@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
 import {
-  Input, ValidField,
-  ValidPasswordIcon, ValidUnvisiblePasswordIcon, ValidVisiblePasswordIcon
-} from './Inputs.elements';
+  Field, Input, PasswordIcon,
+  InvisiblePasswordIcon, VisiblePasswordIcon
+} from '../Inputs.elements';
 
-function ValidPassword() {
+function InputPassword() {
   const [text, setText] = useState('');
   const [visible, setVisible] = useState(false);
 
   const handleClick = () => setVisible(!visible);
 
   return (
-    <ValidField>
-      <ValidPasswordIcon/>
+    <Field>
+      <PasswordIcon/>
       <Input 
         placeholder="Senha"
         type={visible ? 'text' : 'password'} 
         value={text} onChange={e => setText(e.target.value)}/>
       {visible ? 
-        <ValidUnvisiblePasswordIcon onClick={handleClick}/>
+        <InvisiblePasswordIcon onClick={handleClick}/>
         : 
-        <ValidVisiblePasswordIcon onClick={handleClick} />
+        <VisiblePasswordIcon onClick={handleClick} />
       }
-    </ValidField>
+    </Field>
   );
 }
 
-export default ValidPassword;
+export default InputPassword;

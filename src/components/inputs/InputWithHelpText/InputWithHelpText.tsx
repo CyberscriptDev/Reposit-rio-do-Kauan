@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field, HelpField, Input } from './Inputs.elements';
+import { Field, HelpField, Input } from '../Inputs.elements';
 
 interface Props {
   type: string,
@@ -21,7 +21,6 @@ function InputWithHelpText({ type, placeholder, helpText }: Props) {
       </Field>
       <p>{helpText}</p>
     </HelpField>
-   
   );
 }
 
