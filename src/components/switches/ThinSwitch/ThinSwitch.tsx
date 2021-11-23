@@ -4,7 +4,7 @@ import {
   SwitchThinButton,
   SwitchThinControl,
   SwitchThinInput,
-} from './SwitchThin.style';
+} from './ThinSwitch.style';
 
 interface Props {
   color?: string;
