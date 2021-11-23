@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field, HelpField, Input } from '../Inputs.elements';
+import { Field, HelpField, Input } from './InputWithHelpText.style';
 
 interface Props {
   type: string,

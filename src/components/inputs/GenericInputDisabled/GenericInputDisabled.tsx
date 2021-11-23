@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field, Input } from '../Inputs.elements';
+import { Field, Input } from './GenericInputDisabled.style';
 
 interface Props {
   type: string,

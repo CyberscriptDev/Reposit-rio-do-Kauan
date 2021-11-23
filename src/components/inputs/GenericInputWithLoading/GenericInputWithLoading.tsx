@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Field, Input, LoadingIcon } from '../Inputs.elements';
+import { Field, Input, LoadingIcon } from './GenericInputWithLoading.style';
 
 interface Props {
   type: string,
