@@ -6,7 +6,7 @@ interface Props {
 
 export const SwitchField = styled.div`
   transition: background-color 1s linear;
-  padding: 10px 0;
+  margin: 5px 0 5px 0;
   width: 100px;
 `;
 
@@ -130,7 +130,7 @@ export const SwitchThinBlock = styled.div`
 export const SwitchThinOption = styled.span`
   position: relative;
   top: 8px;
-  right: 7px;
+  right: 22px;
   display: block;
   color: #a2a5b9;
   font-size: 1em;

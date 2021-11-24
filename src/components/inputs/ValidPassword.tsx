@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Input, ValidField,
-  ValidPasswordIcon, ValidUnvisiblePasswordIcon, ValidVisiblePasswordIcon
+  ValidPasswordIcon, ValidInvisiblePasswordIcon, ValidVisiblePasswordIcon
 } from './Inputs.elements';
 
 function ValidPassword() {
@@ -18,7 +18,7 @@ function ValidPassword() {
         type={visible ? 'text' : 'password'} 
         value={text} onChange={e => setText(e.target.value)}/>
       {visible ? 
-        <ValidUnvisiblePasswordIcon onClick={handleClick}/>
+        <ValidInvisiblePasswordIcon onClick={handleClick}/>
         : 
         <ValidVisiblePasswordIcon onClick={handleClick} />
       }
