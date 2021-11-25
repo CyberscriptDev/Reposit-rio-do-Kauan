@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import CollapseChevron from './collapses/CollapseChevron/CollapseChevron';
 import CollapsePlus from './collapses/CollapsePlus/CollapsePlus';
 import GenericInput from './inputs/GenericInput/GenericInput';
-import GenericInputDisabled from './inputs/GenericInputDisabled/GenericInputDisabled';
 import GenericLoadingInput from './inputs/GenericLoadingInput/GenericLoadingInput';
 import HelpTextInput from './inputs/HelpTextInput/HelpTextInput';
 import InputEmail from './inputs/InputEmail/InputEmail';
@@ -12,29 +11,27 @@ import InvalidEmail from './inputs/InvalidEmail/InvalidEmail';
 import InvalidPassword from './inputs/InvalidPassword/InvalidPassword';
 import ValidEmail from './inputs/ValidEmail/ValidEmail';
 import ValidPassword from './inputs/ValidPassword/ValidPassword';
-import SwitchWithOption from './switches/OptionSwitch/OptionSwitch';
+import OptionSwitch from './switches/OptionSwitch/OptionSwitch';
+import OptionThinSwitch from './switches/OptionThinSwitch/OptionThinSwitch';
 import Switch from './switches/Switch/Switch';
-import SwitchThinWithOption from './switches/ThinOptionSwitch/ThinOptionSwitch';
-import SwitchThin from './switches/ThinSwitch/ThinSwitch';
+import ThinSwitch from './switches/ThinSwitch/ThinSwitch';
 
 export function Home() {
   return (
     <Store>
       <div>
         <p>Switches</p>
-        <Switch id="checkbox" />
-        <SwitchThin id="checkbox-thin" color="#950ae6" />
-        <SwitchWithOption color="#0df60d" option="Some Option" id="option" />
-        <SwitchThinWithOption
-          color="#0df60d"
-          option="Some Option"
-          id="option-thin"
-        />
+        <Switch id="checkbox" color='green'/>
+        <br />
+        <ThinSwitch id="thin-checkbox" color="#a2c"/>
+        <br />
+        <OptionSwitch id="option-checkbox" color="red" option="Some Option"/>
+        <br />
+        <OptionThinSwitch id="thin-option" color="#0e35e0" option="Some Option" optionColor="red"/>
       </div>
       <div>
         <p>Inputs</p>
         <GenericInput type="text" />
-        <GenericInputDisabled type="text" />
         <GenericLoadingInput type="text" />
         <InputEmail />
         <InputPassword />
@@ -55,4 +52,5 @@ export function Home() {
 
 export const Store = styled.div`
   display: flex;
+  justify-content: space-around;
 `;

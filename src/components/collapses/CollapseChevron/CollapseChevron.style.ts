@@ -1,30 +1,9 @@
 import { IoIosArrowDown } from 'react-icons/io';
-import styled, { keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface Props {
-  showContent: boolean,
+  open: boolean,
 }
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(180deg);
-  }
-`;
-
-const invertedRotate = keyframes`
-from {
-  transform: rotate(180deg);
-}
-
-to {
-  transform: rotate(0deg);
-}
-`;
-
 
 export const CollapseField = styled.div`
   padding: 0.8rem;
@@ -34,8 +13,8 @@ export const CollapseField = styled.div`
   border-radius: 0.3rem;
   border: 0.1rem solid #a2a5b9;
   flex-wrap: wrap;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all 0.4s ease-out;
 `;
 
 export const CollapseHeader = styled.div`
@@ -44,41 +23,38 @@ export const CollapseHeader = styled.div`
   height: 1.50rem;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 
   h3 {
     font-weight: normal;
     color: #283252;
   }
 
-  .isActive {
-    -webkit-animation: ${rotate} 0.2s;
-    animation: ${rotate} 0.2s;
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-    border-color: #e5e5e5 !important;
-    border-radius: 50%;
-    box-shadow: -1px 3px 10px 0 rgb(0 0 0 / 6%);
-  }
 `;
 
-export const CollapseChevronDownIcon = styled(IoIosArrowDown)`
+export const CollapseChevronDownIcon = styled(IoIosArrowDown)<Props>`
   color: #a2a5b9;
-  -webkit-animation: ${invertedRotate} 0.2s;
-  animation: ${invertedRotate} 0.2s;
-  margin-right: 0.5rem;
+  transition: transform 300ms ease-in-out;
+  transform: rotate(0deg);
+  ${({ open }) => !!open && css`
+    transform: rotate(180deg);
+  `}
+  border-color: ${({ open }) => !!open && '#e5e5e5'} !important;
+  box-shadow: ${({ open }) => !!open && '-1px 3px 10px 0 rgb(0 0 0 / 6%)'};
   padding: 5px;
+  margin-right: 0.5rem;
   border: 1px solid transparent;
-  cursor: pointer;
+  border-radius: 50%;
 `;
 
 export const CollapseContent = styled.div<Props>`
   border-top: none;
-  opacity: ${({ showContent }) => showContent ? "1" : "0"};
-  max-height: ${({ showContent }) => showContent ? "100%" : "0"};
+  opacity: ${({ open }) => open? "1" : "0"};
+  max-height: ${({ open }) => open? "100%" : "0"};
   overflow: hidden;
-  padding: ${({ showContent }) => showContent ? "0.8rem" : "0 0.8rem"};
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  padding: ${({ open }) => open ? "0.8rem" : "0 0.8rem"};
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   -webkit-font-smoothing: antialiased;
   p {
     color: #a2a5b9;

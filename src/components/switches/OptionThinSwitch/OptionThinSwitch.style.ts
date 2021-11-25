@@ -1,13 +1,15 @@
 import styled, { css } from 'styled-components';
 
 interface Props {
-  isChecked: boolean;
+  isChecked?: boolean;
   color?: string;
   sliderWidth?: number;
+  optionColor?: string;
 }
 
 export const SwitchField = styled.div`
-  display: block;
+  display: flex;
+  align-items: center;
   margin-left: 8px;
 `;
 
@@ -22,7 +24,7 @@ export const SwitchThinControl = styled.label<Props>`
   position: relative;
   display: inline-block;
   height: 8px;
-  width: ${({ sliderWidth }) => sliderWidth ? `${sliderWidth}px` : '32px'};
+  width: ${({ sliderWidth }) => sliderWidth ? `${sliderWidth}px` : '50px'};
   border-radius: 8px;
   cursor: pointer;
   background-color: ${({ color, isChecked }) => isChecked && color ? color : '#c5c5c5'};
@@ -54,5 +56,15 @@ export const SwitchThinControl = styled.label<Props>`
   ${({ isChecked }) => !!isChecked && css`
   left: calc(100% - 18px);
   `}
+  }
+`;
+
+export const OptionField = styled.div<Props>`
+  margin-left: 12px;
+  width: 100%;
+  height: 100%;
+
+  span {
+    color: ${({ optionColor }) => optionColor ? optionColor : '#a2a5b9'};
   }
 `;

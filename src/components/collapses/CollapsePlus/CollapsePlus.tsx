@@ -10,19 +10,19 @@ interface Props {
 }
 
 function CollapsePlus({ title, content }: Props) {
-  const [showContent, setShowContent] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleClick = () => setShowContent(!showContent);
+  const handleClick = () => setOpen(!open);
 
   return (
     <CollapseField>
-      <CollapseHeader>
+      <CollapseHeader onClick={handleClick}>
         <h3>{title}</h3>
         <CollapsePlusIcon 
-          className={showContent ? 'isActive' : undefined} 
-          onClick={handleClick} />
+          open={open} 
+        />
       </CollapseHeader>
-      <CollapseContent showContent={showContent}>
+      <CollapseContent open={open}>
         <p>{content}</p>
       </CollapseContent>
     </CollapseField>

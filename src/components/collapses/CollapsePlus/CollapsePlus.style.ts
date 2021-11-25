@@ -1,29 +1,9 @@
 import { AiOutlinePlus } from 'react-icons/ai';
-import styled, { keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface Props {
-  showContent: boolean,
+  open: boolean,
 }
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(45deg);
-  }
-`;
-
-const invertedRotate = keyframes`
-from {
-  transform: rotate(45deg);
-}
-
-to {
-  transform: rotate(0deg);
-}
-`;
 
 export const CollapseField = styled.div`
   padding: 0.8rem;
@@ -33,6 +13,7 @@ export const CollapseField = styled.div`
   border-radius: 0.3rem;
   border: 0.1rem solid #a2a5b9;
   flex-wrap: wrap;
+  transition: all 0.4s ease-out;
 `;
 
 export const CollapseHeader = styled.div`
@@ -41,43 +22,39 @@ export const CollapseHeader = styled.div`
   height: 1.50rem;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 
   h3 {
     font-weight: normal;
     color: #283252;
   }
-
-  .isActive {
-    -webkit-animation: ${rotate} 0.2s;
-    animation: ${rotate} 0.2s;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    border-color: #e5e5e5 !important;
-    border-radius: 50%;
-    box-shadow: -1px 3px 10px 0 rgb(0 0 0 / 6%);
-  }
 `;
 
-export const CollapsePlusIcon = styled(AiOutlinePlus)`
+export const CollapsePlusIcon = styled(AiOutlinePlus)<Props>`
   color: #a2a5b9;
-  -webkit-animation: ${invertedRotate} 0.2s;
-  animation: ${invertedRotate} 0.2s;
+  transition: transform 300ms ease-in-out;
+  transform: rotate(0deg);
+  ${({ open }) => !!open && css`
+    transform: rotate(45deg);
+  `}
+  border-color: ${({ open }) => !!open && '#e5e5e5'} !important;
+  box-shadow: ${({ open }) => !!open && '-1px 3px 10px 0 rgb(0 0 0 / 6%)'};
   margin-right: 0.5rem;
   padding: 5px;
   border: 1px solid transparent;
-  cursor: pointer;
+  border-radius: 50%;
 `;
 
 export const CollapseContent = styled.div<Props>`
   border-top: none;
-  opacity: ${({ showContent }) => showContent ? "1" : "0"};
-  max-height: ${({ showContent }) => showContent ? "100%" : "0"};
+  opacity: ${({ open }) => open ? "1" : "0"};
+  max-height: ${({ open }) => open ? "100%" : "0"};
   overflow: hidden;
-  padding: ${({ showContent }) => showContent ? "0.8rem" : "0 0.8rem"};
+  padding: ${({ open }) => open ? "0.8rem" : "0 0.8rem"};
   -webkit-box-flex: 1;
   flex: 1;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
   -webkit-font-smoothing: antialiased;
   p {
     color: #a2a5b9;

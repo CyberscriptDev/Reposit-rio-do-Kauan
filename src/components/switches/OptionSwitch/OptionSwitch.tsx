@@ -1,20 +1,48 @@
-import React from 'react';
-import Switch from '../Switch/Switch';
-import { SwitchBlock, Option } from './OptionSwitch.style';
+import React, { useState } from 'react';
+import {
+  OptionField,
+  SwitchButton,
+  SwitchControl,
+  SwitchField, SwitchInput
+} from './OptionSwitch.style';
 
 interface Props {
-  color?: string,
-  option?: string,
-  id: string
+  color?: string;
+  id: string;
+  onChange?: () => void;
+  sliderWidth?: number;
+  option ?: string;
+  optionColor ?: string;
 }
 
-function OptionSwitch({ color, option, id }: Props) {
+function OptionSwitch({ color, id, onChange, sliderWidth, option, optionColor }: Props) {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleClick = () => setIsChecked(!isChecked);
+
   return (
-    <SwitchBlock>
-      <Switch id={id} color={color}/>
-      <Option>{option}</Option>
-    </SwitchBlock>
+    <SwitchField>
+      <SwitchControl 
+        sliderWidth={sliderWidth} 
+        isChecked={isChecked} 
+        color={color} 
+        htmlFor={id}>
+        <SwitchInput  
+          id={id}
+          type="checkbox" 
+          onClick={handleClick}
+          onChange={() => onChange}/>
+        <SwitchButton 
+          sliderWidth={sliderWidth} 
+          isChecked={isChecked} 
+          color={color} />
+      </SwitchControl>
+      <OptionField optionColor={optionColor}>
+        <span>{option}</span>
+      </OptionField>
+    </SwitchField>
   );
 }
 
 export default OptionSwitch;
+

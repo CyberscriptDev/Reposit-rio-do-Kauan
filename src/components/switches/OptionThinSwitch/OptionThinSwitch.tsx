@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import {
-  SwitchField,
+  OptionField, SwitchField,
   SwitchThinControl,
   SwitchThinInput
-} from './ThinSwitch.style';
+} from './OptionThinSwitch.style';
 
 interface Props {
   color?: string;
   id: string;
   onChange?: () => void;
   sliderWidth?: number;
+  option?:string;
+  optionColor?: string;
 }
 
-function ThinSwitch({ color, id, onChange, sliderWidth }: Props) {
+function OptionThinSwitch({ color, id, onChange, sliderWidth, option, optionColor }: Props) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleClick = () => setIsChecked(!isChecked);
@@ -33,8 +35,11 @@ function ThinSwitch({ color, id, onChange, sliderWidth }: Props) {
         sliderWidth={sliderWidth}
       >
       </SwitchThinControl>
+      <OptionField optionColor={optionColor}>
+        <span>{option}</span>
+      </OptionField>
     </SwitchField>
   );
 }
 
-export default ThinSwitch;
+export default OptionThinSwitch;

@@ -4,9 +4,10 @@ import { Field, Input } from './GenericInput.style';
 interface Props {
   type: string,
   placeholder?: string,
+  disabled?: boolean
 }
 
-function GenericInput({ type, placeholder }: Props) {
+function GenericInput({ type, placeholder, disabled }: Props) {
   const [text, useText] = useState('');
 
   return (
@@ -15,7 +16,8 @@ function GenericInput({ type, placeholder }: Props) {
         value={text} 
         onChange={(e) => useText(e.target.value)} 
         type={type} 
-        placeholder={placeholder}/>
+        placeholder={placeholder}
+        disabled={disabled}/>
     </Field>
   );
 }

@@ -1,57 +1,80 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface Props {
-  isChecked: boolean
+  isChecked: boolean;
+  color?: string;
+  sliderWidth?: number;
 }
 
 export const SwitchField = styled.div`
-  transition: background-color 1s linear;
-  padding: 10px 0;
-  width: 100px;
-`;
-
-export const SwitchInput = styled.input`
-  height: 0;
-  width: 0;
-  visibility: hidden;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: both;
+  font-size: 1rem;
+  position: relative;
+  text-align: inherit;
 `;
 
 export const SwitchControl = styled.label<Props>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  width: 80px;
-  height: 40px;
-  border-radius: 100px;
-  border: 1px solid ${({ color, isChecked }) => isChecked ? color : '#e6e6e6'};
-  background-color: ${({ color, isChecked }) => isChecked ? color : '#fff'};
-  box-shadow: 0 2px 2px rgb(0 0 0 / 24%);
   position: relative;
-  transition: background-color 0.2s;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
-  &:hover {
-    box-shadow: 0 0 5px ${({ color, isChecked }) => isChecked ? color : '#e6e6e6'};
+  i::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: ${({ sliderWidth }) => sliderWidth ? `${sliderWidth - 4}px` : '42px'};
+  height: 22px;
+  background-color: ${({ color, isChecked }) => isChecked && color ? color : '#fff'};
+  border-radius: 11px;
+  -webkit-transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+  transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
+  -webkit-transition: all .25s linear;
+  transition: all .25s linear;
+  }
+
+  i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 22px;
+
+  background-color: #fff;
+  border-radius: 11px;
+  -webkit-box-shadow: 0 2px 2px rgb(0 0 0 / 24%);
+  box-shadow: 0 2px 2px rgb(0 0 0 / 24%);
+
+  -webkit-transform: translate3d(2px, 2px, 0);
+  transform: translate3d(2px, 2px, 0);
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  ${({ isChecked }) => !!isChecked && css`
+  left: calc(100% - 26px);
+  `}
   }
 `;
 
-export const SwitchButton = styled.span`
-  content: "";
+export const SwitchInput = styled.input`
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 36px;
-  height: 36px;
-  border-radius: 45px;
-  transition: 0.2s;
-  background: #fff;
-  box-shadow: 0 2px 2px rgb(0 0 0 / 24%);
-  ${SwitchInput}:checked + ${SwitchControl} & {
-    left: calc(100% - 2px);
-    transform: translateX(-100%);
-  }
+  opacity: 0;
+  pointer-events: none;
+`;
 
-  ${SwitchControl}:active & {
-    width: 45px;
+export const SwitchButton = styled.i<Props>`
+  position: relative;
+  display: inline-block;
+  width: ${({ sliderWidth }) => sliderWidth ? `${sliderWidth}px` : '46px'};
+  height: 26px;
+  background-color: ${({ color, isChecked }) => isChecked && color ? color : '#e6e6e6'};
+  border-radius: 23px;
+  vertical-align: text-bottom;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+
+  &:hover {
+    box-shadow: 0 0 0.3rem ${({ color, isChecked }) => isChecked && color ? color : '#e6e6e6'};
   }
 `;
