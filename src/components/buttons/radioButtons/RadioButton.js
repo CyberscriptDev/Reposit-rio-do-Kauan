@@ -5,7 +5,7 @@ const RadioButton = () => {
   return (
     <div>
       Radio buttons:
-      <button type="radio">o</button>
+      <button type="radio">BUTÃO TESTE</button>
     </div>
   );
 };
