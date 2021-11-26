@@ -15,6 +15,7 @@ import OptionSwitch from './switches/OptionSwitch/OptionSwitch';
 import OptionThinSwitch from './switches/OptionThinSwitch/OptionThinSwitch';
 import Switch from './switches/Switch/Switch';
 import ThinSwitch from './switches/ThinSwitch/ThinSwitch';
+import RadioButton from '../components/buttons/radioButtons/RadioButton';
 
 export function Home() {
   return (
@@ -45,6 +46,9 @@ export function Home() {
         <p>Collapse</p>
         <CollapseChevron title='Xulambs Papai' content='Papai do céu, eu estou morrendo de saudade'/>
         <CollapsePlus title='Xulambs Papai' content='Papai do céu, eu estou morrendo de saudade'/>
+      </div>
+      <div>
+        <RadioButton />
       </div>
     </Store>
   );

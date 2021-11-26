@@ -1,9 +1,11 @@
 import React from 'react';
+import Style from './Style';
 
 const RadioButton = () => {
   return (
     <div>
-      Teste
+      Radio buttons:
+      <button type="radio">o</button>
     </div>
   );
 };
